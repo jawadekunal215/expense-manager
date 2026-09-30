@@ -1,5 +1,8 @@
 <?php
 
+// Make the shared configuration visible to Vercel's PHP bundler.
+require_once __DIR__ . '/../includes/config.php';
+
 // Single Vercel PHP entry point for SpendSmart.
 // Existing PHP pages remain in their original locations.
 
