@@ -7,11 +7,27 @@
   },
   "routes": [
     {
-      "handle": "filesystem"
+      "src": "/",
+      "dest": "/api/index.php"
     },
     {
-      "src": "/(.*)",
+      "src": "/index.php",
       "dest": "/api/index.php"
+    },
+    {
+      "src": "/auth/(.*)",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "/pages/(.*)",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "/actions/(.*)",
+      "dest": "/api/index.php"
+    },
+    {
+      "handle": "filesystem"
     }
   ]
 }
