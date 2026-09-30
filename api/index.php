@@ -1,5 +1,8 @@
 <?php
 
+// Keep relative PHP includes working from the existing project structure.
+chdir(__DIR__);
+
 // Make the shared configuration visible to Vercel's PHP bundler.
 require_once __DIR__ . '/../includes/config.php';
 
