@@ -3,16 +3,17 @@
 // EXPENSE MANAGER - Database Configuration
 // ============================================
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'expense_manager');
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_NAME', getenv('DB_NAME') ?: 'expense_manager');
+define('DB_PORT', getenv('DB_PORT') ?: '3306');
 define('APP_NAME', 'SpendSmart');
 define('APP_VERSION', '1.0.0');
 define('CURRENCY', '₹');
 
 // Create Database Connection
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, (int)DB_PORT);
 
 if ($conn->connect_error) {
     die('<div style="font-family:sans-serif;padding:40px;text-align:center;">
