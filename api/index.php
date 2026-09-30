@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Single Vercel PHP entry point for SpendSmart.
 // Existing PHP pages remain in their original locations.
