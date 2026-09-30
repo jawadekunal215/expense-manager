@@ -6,7 +6,7 @@ $activePage = 'transactions';
 $uid = $_SESSION['user_id'];
 
 // Filters
-$filterType = in_array($_GET['type'] ?? 'all', ['all', 'income', 'expense'], true) ? $_GET['type'] : 'all';
+$filterType = $_GET['type'] ?? 'all'; if (!in_array($filterType, ['all', 'income', 'expense'], true)) $filterType = 'all';
 $filterMonth = intval($_GET['month'] ?? date('m'));
 $filterYear = intval($_GET['year'] ?? date('Y'));
 $search = trim($_GET['search'] ?? '');
